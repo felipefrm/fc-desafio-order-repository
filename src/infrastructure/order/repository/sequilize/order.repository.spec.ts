@@ -84,7 +84,7 @@ describe("Order repository test", () => {
 
   it("should update an order", async () => {
     
-    const { orderItem1, orderItem2, product } = await criarOrderItem();
+    const { orderItem1, orderItem2, product } = await createOrderItem();
 
     const order = new Order("123", "123", [orderItem1, orderItem2]);
 
@@ -109,7 +109,7 @@ describe("Order repository test", () => {
 
   it("should find a order by id", async () => {
     
-    const { orderItem1, orderItem2, product } = await criarOrderItem();
+    const { orderItem1, orderItem2, product } = await createOrderItem();
 
     const order = new Order("123", "123", [orderItem1, orderItem2]);
 
@@ -125,7 +125,7 @@ describe("Order repository test", () => {
 
   it("should find all orders", async () => {
       
-      const { orderItem1, orderItem2, product } = await criarOrderItem();
+      const { orderItem1, orderItem2, product } = await createOrderItem();
   
       const order = new Order("123", "123", [orderItem1, orderItem2]);
   
@@ -146,7 +146,7 @@ describe("Order repository test", () => {
 
 });
 
-async function criarOrderItem() {
+async function createOrderItem() {
   const customerRepository = new CustomerRepository();
   const customer = new Customer("123", "Customer 1");
   const address = new Address("Street 1", 1, "Zipcode 1", "City 1");
